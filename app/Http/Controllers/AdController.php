@@ -12,7 +12,25 @@ class AdController extends Controller
      */
     public function index()
     {
-        //
+        // $ads = Ad::paginate(20);
+        $ads = Ad::query()
+            ->where('status', true)
+            // ->where('visit','>',50)
+            // ->orWhere('visit','>',50)
+            // ->whereIn('visit', [14, 31, 54])
+            // ->whereNotIn('visit', [14, 31, 54])
+            // ->whereBetween('visit', [50, 100])
+            // ->whereNotBetween('visit', [50, 100])
+            // ->whereNull('status')
+            // ->whereNotNull('status')
+            // ->whereDay('created_at',now())
+            // ->whereYear('created_at',2024)
+            // ->whereMonth('created_at',1)
+            // ->whereDay('created_at',1)
+            ->whereColumn('created_at','updated_at')//una columna igual a la otra
+            ->paginate(20);
+
+        return view('system.ads.index', compact('ads'));
     }
 
     /**
