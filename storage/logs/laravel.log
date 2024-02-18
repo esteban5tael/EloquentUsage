@@ -7574,3 +7574,33 @@
 #43 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #44 {main}
 "} 
+[2024-02-10 12:27:35] local.ERROR: syntax error, unexpected end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected end of file at D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\routes\\web.php:20)
+[stacktrace]
+#0 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(511): Illuminate\\Routing\\RouteFileRegistrar->register('D:\\\\xampp\\\\htdocs...')
+#1 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(465): Illuminate\\Routing\\Router->loadRoutes('D:\\\\xampp\\\\htdocs...')
+#2 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(194): Illuminate\\Routing\\Router->group(Array, 'D:\\\\xampp\\\\htdocs...')
+#3 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\app\\Providers\\RouteServiceProvider.php(37): Illuminate\\Routing\\RouteRegistrar->group('D:\\\\xampp\\\\htdocs...')
+#4 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#7 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#8 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#9 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(120): Illuminate\\Container\\Container->call(Object(Closure))
+#10 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Object(Closure), Object(Closure))
+#15 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Object(Closure), Array, NULL)
+#16 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\ServiceProvider.php(119): Illuminate\\Container\\Container->call(Object(Closure))
+#17 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1033): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1011): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 34)
+#20 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1010): array_walk(Array, Object(Closure))
+#21 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(263): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#23 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(447): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#24 D:\\xampp\\htdocs\\php\\laravel\\NeoCoders\\EloquentUsage\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(199): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 {main}
+"} 

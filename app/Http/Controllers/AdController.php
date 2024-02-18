@@ -12,6 +12,7 @@ class AdController extends Controller
      */
     public function index()
     {
+        /*    
         // $ads = Ad::paginate(20);
         $ads = Ad::query()
             ->where('status', true)
@@ -27,10 +28,55 @@ class AdController extends Controller
             // ->whereYear('created_at',2024)
             // ->whereMonth('created_at',1)
             // ->whereDay('created_at',1)
-            ->whereColumn('created_at','updated_at')//una columna igual a la otra
+            ->whereColumn('created_at', 'updated_at') //una columna igual a la otra
             ->paginate(20);
 
         return view('system.ads.index', compact('ads'));
+        Hasta aqui la clase 6
+        */
+
+
+        /* Inicio Clase 7 */
+
+        /* $ads = Ad::all()->count();
+
+        return response()->json([
+            'success' => true,
+            'message'=>'->count()',
+            'data' => [
+                $ads
+            ],
+        ], 200); */
+
+        /* $ads = Ad::query()
+        ->where('status', true)
+        ->count();
+
+        return response()->json([
+            'success' => true,
+            'message'=>'->count() active',
+            'data' => [
+                $ads
+            ],
+        ], 200); */
+
+        $ads = Ad::query()
+            ->where('status', true)
+            // ->avg('visit');
+            // ->sum('visit');
+            // ->max('visit');
+            ->min('visit');
+
+        return response()->json([
+            'success' => true,
+            // 'message' => '->avg() visit',
+            // 'message' => '->sum() visit',
+            // 'message' => '->max() visit',
+            'message' => '->min() visit',
+            'data' => [
+                $ads
+            ],
+        ], 200);
     }
 
     /**
