@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
 use App\Models\MyProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,7 +13,24 @@ class MyProfileController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+
+    public function index09Lesson()
+    {
+        $data = MyProfile::query()
+            ->whereHas('ads')
+            ->where('status', true)
+            ->with('ads')
+            ->count('id')
+            // ->paginate(5)
+            // 
+        ;
+
+
+
+        return response()->json([$data], 200);
+    }
+
+    public function index08Lesson()
     {
 
         // $profiles = MyProfile::all();
@@ -54,14 +72,14 @@ class MyProfileController extends Controller
         ->with('ads')
         ->get(); */
 
-        $data=User::query()
-        ->with('profile.ads')
-        ->get()
-        // 
+        $data = User::query()
+            ->with('profile.ads')
+            ->get()
+            // 
         ;
 
 
-        return response()->json($data); 
+        return response()->json($data);
     }
 
     /**
