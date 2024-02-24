@@ -14,6 +14,6 @@ class Category extends Model
 
     public function profiles()
     {
-        return $this->hasMany(MyProfile::class);
+        return $this->hasMany(MyProfile::class,'user_id','id');
     }
 }

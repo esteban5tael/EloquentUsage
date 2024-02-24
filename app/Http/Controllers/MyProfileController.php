@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\MyProfile;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class MyProfileController extends Controller
 {
@@ -17,10 +19,49 @@ class MyProfileController extends Controller
         // $profiles = MyProfile::orderBy('name', 'asc')->get();
         // $profiles = MyProfile::orderBy('name', 'desc')->get();
         // $profiles = MyProfile::orderBy('name')->paginate(20);
+
+        /* 
         $profiles = MyProfile::latest('name')->paginate(20);
+        return view('system.profiles.index', compact('profiles'));
+         */
+
+        /* 
+        CONSULTAS POR RELACIONES
+        */
+
+        /* $ads = MyProfile::query()
+            ->with('ads')
+            ->get();
+
+        return response()->json($ads); */
+
+        /* $profile = MyProfile::query()
+            ->findOrFail(1)->ads()->get();
+
+        // $ads = $profile->ads()->get();
+
+        return response()->json($v); */
+
+        /* $data=MyProfile::query()
+        ->has('ads')
+        ->with('ads')
+        ->get(); */
+
+        /* $data=MyProfile::query()
+        ->whereHas('ads',function($query){
+            $query->where( 'status',true );
+        })
+        ->with('ads')
+        ->get(); */
+
+        $data=User::query()
+        ->with('profile.ads')
+        ->get()
+        // 
+        ;
 
 
-        return view('system.index', compact('profiles'));
+        return response()->json($data); 
     }
 
     /**
