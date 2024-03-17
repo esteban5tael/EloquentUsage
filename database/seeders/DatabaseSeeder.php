@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             MyProfileSeeder::class,
             AdSeeder::class,
+            RoleSeeder::class,
         ]);
     }
 }

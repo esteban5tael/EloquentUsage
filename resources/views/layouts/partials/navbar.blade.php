@@ -15,7 +15,7 @@
                         aria-haspopup="true" aria-expanded="false">Options</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="{{route('system.categories.index')}}">{{__('Categories')}}</a>
-                        <a class="dropdown-item" href="#">Second Option</a>
+                        <a class="dropdown-item" href="{{route('relationships.index')}}">Relationships</a>
                     </div>
                 </li>
 

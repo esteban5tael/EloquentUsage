@@ -15,7 +15,7 @@
                         aria-haspopup="true" aria-expanded="false">Options</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="<?php echo e(route('system.categories.index')); ?>"><?php echo e(__('Categories')); ?></a>
-                        <a class="dropdown-item" href="#">Second Option</a>
+                        <a class="dropdown-item" href="<?php echo e(route('relationships.index')); ?>">Relationships</a>
                     </div>
                 </li>
 

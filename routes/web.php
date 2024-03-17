@@ -4,6 +4,7 @@ use App\Http\Controllers\_SiteController;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MyProfileController;
+use App\Http\Controllers\RelationshipController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,3 +19,5 @@ Route::resource('/system/ads', AdController::class)->names('system.ads');
 
 Route::get('/system/profiles', [MyProfileController::class,'index'])->name('system.profiles.index');
 Route::get('/adsByUser', [MyProfileController::class,'adsByUser'])->name('adsByUser');
+
+Route::resource('/relationships', RelationshipController::class)->names('relationships');
