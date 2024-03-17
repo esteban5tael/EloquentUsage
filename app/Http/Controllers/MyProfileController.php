@@ -7,12 +7,25 @@ use App\Models\MyProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Profiler\Profile;
+use App\Http\Responses\ApiResponse as ApiR;
 
 class MyProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    public function adsByUser()
+    {
+        // 10 Lesson
+        // calucalr el numero total de anuncion por usuario
+
+        $adsByUser = MyProfile::all()->random()->first()
+
+            ->ads()
+            ->count();
+
+
+
+        return ApiR::success('Ads by User', $adsByUser);
+    }
 
     public function index09Lesson()
     {

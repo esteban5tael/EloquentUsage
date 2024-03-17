@@ -17,3 +17,4 @@ Route::resource('/system/categories', CategoryController::class)->names('system.
 Route::resource('/system/ads', AdController::class)->names('system.ads');
 
 Route::get('/system/profiles', [MyProfileController::class,'index'])->name('system.profiles.index');
+Route::get('/adsByUser', [MyProfileController::class,'adsByUser'])->name('adsByUser');
