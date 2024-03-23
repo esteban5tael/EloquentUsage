@@ -18,27 +18,34 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h1>Roles</h1>
-    <div class="row">
-        @foreach($roles as $role)
-            <div class="col-md-4">
-                <div class="card role-card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $role->name }}</h5>
-                        <p class="card-text">{{ $role->description }}</p>
-                        <ul class="list-group">
-                            <li class="list-group-item">Users:</li>
-                            @foreach($role->users as $user)
-                                <li class="list-group-item">{{ $user->name }}</li>
-                            @endforeach
-                        </ul>
+    <div class="container">
+        <h1>Users</h1>
+        <div class="row">
+            @foreach ($users as $user)
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title text-center">
+                                <h3>{{ $user->name }}</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text text-center">
+                                @foreach ($user->roles as $role)
+                                    <p>{{ $role->name }} | <strong>Status: </strong><b>{{$role->pivot->status?'Active':'Inactive'}}</b></p>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-text text-center">
+{{$user->created_at}}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
-</div>
 @endsection
 
 @section('scripts')

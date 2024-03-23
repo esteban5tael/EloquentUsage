@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->foreignId('user_id')->references('id')->on('users')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('role_id')->references('id')->on('roles')->constrained()->onUpdate('cascade')->onDelete('cascade');
-
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

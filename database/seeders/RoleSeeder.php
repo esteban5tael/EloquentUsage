@@ -47,19 +47,36 @@ class RoleSeeder extends Seeder
         Role::insert($roles);
 
         $user = User::find(1);
-        $user->roles()->attach($adminRole);
-        $user->roles()->attach($userRole);
-        $user->roles()->attach($guest);
+        // $user->roles()->attach($adminRole);
+        // $user->roles()->attach($userRole);
+        // $user->roles()->attach($guest);
+        // $user->roles()->sync([
+        //     $userRole->id=>["status",false]
+        // ]);
+        $user->roles()->sync([
+            $adminRole->id => ['status' => true],
+            $userRole => ['status' => true],
+            $guest => ['status' => true],
+        ]);
 
         $user = User::find(2);
-        $user->roles()->attach($userRole);
-        $user->roles()->attach($guest);
+        $user->roles()->sync([
+            $adminRole->id => ['status' => false],
+            $userRole->id => ['status' => true],
+            $guest->id => ['status' => true],
+        ]);
 
+        $roles = Role::all();
 
+        // Obtener todos los usuarios excepto los dos primeros (que ya tienen roles asignados)
+        $users = User::whereNotIn('id', [1, 2])->get();
 
-
-
-
-
+        // Para cada usuario, asignar roles de manera aleatoria con un estado aleatorio
+        foreach ($users as $user) {
+            $userRoles = $roles->random(rand(1, $roles->count())); // Seleccionar roles aleatorios
+            foreach ($userRoles as $role) {
+                $user->roles()->attach($role->id, ['status' => rand(0, 1)]);
+            }
+        }
     }
 }
